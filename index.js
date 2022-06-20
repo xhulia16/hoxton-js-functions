@@ -3,56 +3,37 @@
 // Input: a (number), b (number)
 // Action: Add both numbers together
 // Output: The result (number)
-function add(a=0,b=0) {
-    let sum=a+b
-    return sum
-    console.log(sum)
+function add(a,b) {
+    return a+b
+
   }
   
   // Input: number
   // Action: Check if the number given is even or not
   // Output: The result (boolean)
-  function isEven(a=0) {
-    if(a % 2===0){
-        console.log(true)
-        return true
-    }
-    else{
-        console.log(false) 
-        return false
-    }
+  function isEven(number) {
+    return number % 2 === 0
   }
   
   // Input: name (string)
   // Action: Greet the user by name
   // Output: The greeting (string)
-  function greet(name = 'stranger') {
-    let message1 = `Hi, ${name}`
-    console.log(message1)
-    return message1 
+  function greet(name) {
+    console.log(`Hi, ${name}`)
   }
   
   // Input: age (number)
   // Action: Check if the age is 18 or over
   // Output: The result (boolean)
-  function isAnAdult(a=0) {
-    if(a>=18){
-        console.log(true)
-        return true
-    }
-    else{
-        console.log(false)
-        return false
-    }
+  function isAnAdult(age) {
+        return age>=18
   }
   
   // Input: age (number)
   // Action: Check how many years are left until adulthood (18)
   // Output: The result (number)
-  function yearsToAdulthood(a=0) {
-    let yearsLeftToAdulthood=18-a
-    return(yearsLeftToAdulthood)
-    console.log(yearsLeftToAdulthood)
+  function getYearsToAdulthood(age) {
+    return 18-age
   }
   
   // Input: person ({ age: number, name: string })
@@ -61,18 +42,13 @@ function add(a=0,b=0) {
   //   - if they are, greet them
   //   - if they are not, tell them to come back in X years (when they are)
   // Output: The result (string)
-  function admit([age=0, personName='stranger']) {
-      greet(personName)
-   if(isAnAdult(age)===true){
-       let message2='You can enter'
-       return(message2)
-       console.log(message2)
+  function admit(person) {
+      greet(person.name)
+   if(isAnAdult(person.age)){
+      console.log ("You can enter")
    }
    else{
-       yearsToAdulthood(age)
-       let message3="Come back later, you are not old enough"
-       return(message3)
-       console.log(message3)
+    console.log(`Come back in ${getYearsToAdulthood(person.age)} years`)
    }
     // use greet, isAnAdult and yearsToAdulthood to help you!
   }
